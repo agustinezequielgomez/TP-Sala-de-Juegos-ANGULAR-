@@ -1,13 +1,26 @@
-.imagenDeMenu{
-width: 80px;
-height: 70px;
+th {
+    text-align: center;
 }
 
-.hero-text {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #100000;
-    }
+.texto {
+    margin-left: 2rem;
+}
+
+a {
+    color: #fdfdfd;
+}
+
+.img-col {
+    height: 100%;
+}
+
+img {
+    float: left;
+    width: 100%;
+    height: 100%;
+    margin-right: 3rem;
+}
+
+tr {
+    border-bottom: 0.1rem solid grey;
+}

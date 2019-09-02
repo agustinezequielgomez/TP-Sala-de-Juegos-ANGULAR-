@@ -1,36 +1,37 @@
-<div class="container-fluid">
+<div class="container-fluid fadeIn animated">
   <div class="row">
     <div class="col-1"></div>
     <div class="col-10">
-      <app-cabecera></app-cabecera>
       <div class="row">
-        <ul class="list-group">
-          <li class="list-group-item list-group-item-danger">
-            <div class="media-body">
-              <div class="hero-text">
-                <h4>Menú Principal</h4>
-              </div>
-            </div>
-          </li>
-          
-          <li class="list-group-item list-group-item-success" *ngFor='let contenido of content'>
-            <div class="col-sm-12">
-              <a routerLink="{{contenido.link}}">
-                <div class="media">
-                  <div class="col-sm-2">
-                    <img src="{{contenido.img}}" class="media-object imagenDeMenu">
-                  </div>
-                  <div class="col-sm-10">
-                    <div class="media-body">
-                      <h4 class="media-heading">{{contenido.heading}}</h4>
-                      <p>{{contenido.content}}</p>
+        <table class="table">
+          <app-cabecera></app-cabecera>
+        </table>
+        <table class="table-dark table table-responsive">
+          <thead>
+            <tr>
+              <th scope="col">Menu Principal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <div class="col-12">
+              <tr *ngFor="let contenido of content">
+                <a routerLink="{{contenido.link}}">
+                  <div class="hvr-bounce-to-left media">
+                    <div class="col-2 img-col">
+                      <td><img id="imagen" src="{{contenido.img}}" class="media-object imagenDeMenu img-fluid"></td>
+                    </div>
+                    <div class="col-10" id="content">
+                      <td>
+                        <h4 class="media-heading">{{contenido.heading}}</h4>
+                        <p>{{contenido.content}}</p>
+                      </td>
                     </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              </tr>
             </div>
-          </li>
-        </ul>
+          </tbody>
+        </table>
       </div>
     </div>
     <div class="col-1"></div>

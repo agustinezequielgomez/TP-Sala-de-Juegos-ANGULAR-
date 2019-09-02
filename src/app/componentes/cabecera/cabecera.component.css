@@ -1,44 +1,24 @@
-.panel
+.container-fluid
 {
-    height: 200px;
-    background-image: url("/TP_LAV4_2017/assets/imagenes/cabecera.png");
+    margin-top: 4rem;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../assets/imagenes/cabecera.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    padding: 3rem 0;
+    margin-bottom: -1rem;
 }
 
-
-.hero-text {
-text-align: center;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-color: #3E06B0;
-}
-
-.hero-text a {
-border: none;
-outline: 0;
-display: inline-block;
-padding: 1rem;
-color: black;
-background-color: #ddd;
-text-align: center;
-cursor: pointer;
-}
-
-.hero-text a:hover {
-background-color: #555;
-color: white;
-}
-.container-fluid
+.titulo, p
 {
-    margin-top: 4rem;
+    text-align: center;
+    color: #3E06B0;
 }
 
-#botones
+#github
 {
-    margin-bottom: 5rem;
+    float: right;
 }
