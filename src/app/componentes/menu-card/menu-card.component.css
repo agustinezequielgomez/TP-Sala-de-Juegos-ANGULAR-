@@ -55,3 +55,58 @@ img {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
+
+
+  a
+  {
+    color: var(--secondary-background-color);
+  }
+
+  #play
+  {
+    width: 90%;
+    margin-top: 1rem;
+    background-color: var(--secondary-background-color);
+  }
+
+  .flip-card {
+    background-color: transparent;
+    width: 35rem;
+    height: 25rem;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .flip-card-back {
+    background-color: var(--main-color-step-200);
+    color: white;
+    transform: rotateY(180deg);
+  }

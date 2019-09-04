@@ -1,4 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+:root
+{
+  --base-background-color: #343a40;
+  --base-background-color-rgb: 52,58,64;
+  --base-background-color-light: #5e646b;
+
+  --base-text-color: #ffffff;
+  --base-text-color-rgb: 255,255,255;
+
+  --base-color-step-50: #3e444a;
+  --base-color-step-100: #484e53;
+  --base-color-step-150: #52585d;
+  --base-color-step-200: #5d6166;
+  --base-color-step-250: #676b70;
+  --base-color-step-300: #717579;
+  --base-color-step-350: #7b7f83;
+  --base-color-step-400: #85898c;
+  --base-color-step-450: #8f9396;
+  --base-color-step-500: #9a9da0;
+  --base-color-step-550: #a4a6a9;
+  --base-color-step-600: #aeb0b3;
+  --base-color-step-650: #b8babc;
+  --base-color-step-700: #c2c4c6;
+  --base-color-step-750: #cccecf;
+  --base-color-step-800: #d6d8d9;
+  --base-color-step-850: #e1e1e2;
+  --base-color-step-900: #ebebec;
+  --base-color-step-950: #f5f5f5;
+
+  --main-background-color: #6201ed;
+  --main-background-color-dark: #1e00c0;
+  --main-background-color-rgb: 98,1,237;
+
+  --main-text-color: #fdfdfd;
+  --main-text-color-rgb: 255,255,255;
+
+  --main-color-step-50: #6a0eee;
+  --main-color-step-100: #721aef;
+  --main-color-step-150: #7a27f0;
+  --main-color-step-200: #8134f1;
+  --main-color-step-250: #8941f2;
+  --main-color-step-300: #914df2;
+  --main-color-step-350: #995af3;
+  --main-color-step-400: #a167f4;
+  --main-color-step-450: #a973f5;
+  --main-color-step-500: #b180f6;
+  --main-color-step-550: #b88df7;
+  --main-color-step-600: #c099f8;
+  --main-color-step-650: #c8a6f9;
+  --main-color-step-700: #d0b3fa;
+  --main-color-step-750: #d8c0fb;
+  --main-color-step-800: #e0ccfb;
+  --main-color-step-850: #e7d9fc;
+  --main-color-step-900: #efe6fd;
+  --main-color-step-950: #f7f2fe;
+
+  --secondary-background-color: #8bed01;
+  --secondary-background-color-rgb: 139,237,1;
+
+  --secondary-text-color: #ffffff;
+  --secondary-text-color-rgb: 255,255,255;
+
+  --secondary-color-step-50: #91ee0e;
+  --secondary-color-step-100: #97ef1a;
+  --secondary-color-step-150: #9cf027;
+  --secondary-color-step-200: #a2f134;
+  --secondary-color-step-250: #a8f241;
+  --secondary-color-step-300: #aef24d;
+  --secondary-color-step-350: #b4f35a;
+  --secondary-color-step-400: #b9f467;
+  --secondary-color-step-450: #bff573;
+  --secondary-color-step-500: #c5f680;
+  --secondary-color-step-550: #cbf78d;
+  --secondary-color-step-600: #d1f899;
+  --secondary-color-step-650: #d6f9a6;
+  --secondary-color-step-700: #dcfab3;
+  --secondary-color-step-750: #e2fbc0;
+  --secondary-color-step-800: #e8fbcc;
+  --secondary-color-step-850: #eefcd9;
+  --secondary-color-step-900: #f3fde6;
+  --secondary-color-step-950: #f9fef2;
+}
+
+
+
 @font-face
 {
     font-family: 'Montserrat Light';
@@ -7,6 +92,11 @@
 
 * {
     font-family: 'Montserrat Light';
+}
+
+body, .container-fluid
+{
+  background-color: var(--base-background-color-light);
 }
 
 .animated {
@@ -1391,7 +1481,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgb(115, 32, 209);
+  background: var(--main-background-color);
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 100% 50%;
@@ -1557,7 +1647,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgb(115, 32, 209);
+  background: var(--main-background-color);
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 100% 50%;

@@ -1,5 +1,28 @@
-<div class="container" >
-    <div class="card">
+<div class="container-fluid" >
+  <div class="card-deck">
+    <div class="card flip-card" *ngFor='let contenido of cardContent'>
+        <div class="flip-card-inner">
+          <div class="flip-card-front" [style]='sanitizeStlye(contenido.link)'>
+          </div>
+          <div class="card-body flip-card-back">
+              <h1>{{contenido.title}}</h1>
+              <p class="title">{{contenido.description}}</p>
+              <p>UTN FRA</p>
+              <div class="row">
+                <div class="col-3 hvr-grow-shadow"><a href="#"><i class="fa fa-dribbble"></i></a></div>
+                <div class="col-3 hvr-grow-shadow"><a href="#"><i class="fa fa-twitter"></i></a></div>
+                <div class="col-3 hvr-grow-shadow"><a href="#"><i class="fa fa-linkedin"></i></a></div>
+                <div class="col-3 hvr-grow-shadow"><a href="#"><i class="fa fa-facebook"></i></a></div>
+              </div>
+              <button id="play" class="block btn hvr-underline-from-center">Jugar</button>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+
+    <!-- <div class="card">
       <img class="img-thumbnail"   src="./assets/imagenes/cerebro.jpg" alt="Avatar" style="width:100%">
       <h1>Velocidad y agilidad aritmética </h1>
       <p class="title">Juego de agilidad mental</p>
@@ -37,4 +60,4 @@
       <a href="#"><i class="fa fa-facebook"></i></a> 
       <p>           <button class="button"  (click)="Juego('Adivina')">Jugar</button></p>
     </div>
-  </div>
+  </div> -->

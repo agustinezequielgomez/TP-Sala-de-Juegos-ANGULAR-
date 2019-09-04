@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
+import { SecurityContext } from '@angular/compiler/src/core';
+
+
 @Component({
   selector: 'app-menu-card',
   templateUrl: './menu-card.component.html',
@@ -7,9 +11,19 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class MenuCardComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,
-    private router: Router) { }
+  public cardContent: any[] = [{link: './assets/imagenes/cerebro.jpg ', title: 'Velocidad y agilidad aritmética', description:'Juego de agilidad mental'},
+{link: './assets/imagenes/ppt.jpg', title: 'Piedra Papel o Tijera', description: 'Juega contra la máquina'},
+{link: './assets/imagenes/adivina.png', title: 'Adivina el número secreto', description: 'Juega de estrategia'}];
 
+
+constructor(private route: ActivatedRoute, private router: Router, private sanitizer: DomSanitizer) 
+{
+}
+
+sanitizeStlye(url)
+{
+  return this.sanitizer.bypassSecurityTrustStyle(`{bakcground-image:url(${url})};`);
+}
 
   ngOnInit() {
   }
