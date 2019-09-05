@@ -11,12 +11,11 @@
     text-align: center;
 }
 
-/* Add rounded corners to the top left and the top right corner of the image */
 img {
     border-radius: 5px 5px 0 0;
     width: 200px;
     height: 200px;
-}/* Add some padding inside the card container */
+}
 .container {
     padding: 2px 16px;
 }
@@ -56,17 +55,21 @@ img {
     transform: translateY(4px);
   }
 
+  .card-deck
+  {
+    justify-content: center;
+  }
 
   a
   {
-    color: var(--secondary-background-color);
+    color: var(--secondary-color-step-900);
   }
 
   #play
   {
     width: 90%;
     margin-top: 1rem;
-    background-color: var(--secondary-background-color);
+    background-color: var(--secondary-color-step-900);
   }
 
   .flip-card {
@@ -106,7 +109,7 @@ img {
   }
 
   .flip-card-back {
-    background-color: var(--main-color-step-200);
+    background-color: var(--base-color);
     color: white;
     transform: rotateY(180deg);
   }

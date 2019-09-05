@@ -10,6 +10,11 @@ a {
     color: #fdfdfd;
 }
 
+.col-12
+{
+    padding: 0;
+}
+
 .img-col {
     height: 100%;
 }
@@ -21,11 +26,27 @@ img {
     margin-right: 3rem;
 }
 
-tr {
-    border-bottom: 0.1rem solid grey;
-}
-
 #menuPrincipal
 {
     font-size: 2rem;
+}
+
+.table-responsive, .media
+{
+    background-color: var(--content-color);
+}
+
+/* .table-responsive, .col-12>tr
+{
+    border: 0.3rem solid var(--secondary-color);
+} */
+
+#menuPrincipal, #content
+{
+    color: black;
+}
+
+#topRow
+{
+    margin-top: 0;
 }

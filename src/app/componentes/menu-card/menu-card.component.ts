@@ -11,9 +11,12 @@ import { SecurityContext } from '@angular/compiler/src/core';
 })
 export class MenuCardComponent implements OnInit {
 
-  public cardContent: any[] = [{link: './assets/imagenes/cerebro.jpg ', title: 'Velocidad y agilidad aritmética', description:'Juego de agilidad mental'},
-{link: './assets/imagenes/ppt.jpg', title: 'Piedra Papel o Tijera', description: 'Juega contra la máquina'},
-{link: './assets/imagenes/adivina.png', title: 'Adivina el número secreto', description: 'Juega de estrategia'}];
+  public cardContent: any[] = [{link: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/cerebro.jpg')`),
+  title: 'Velocidad y agilidad aritmética', description:'Juego de agilidad mental'},
+{link: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/ppt.jpg')`),
+ title: 'Piedra Papel o Tijera', description: 'Juega contra la máquina'},
+{link: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/adivina.png')`),
+title: 'Adivina el número secreto', description: 'Juega de estrategia'}];
 
 
 constructor(private route: ActivatedRoute, private router: Router, private sanitizer: DomSanitizer) 

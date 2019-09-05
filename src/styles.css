@@ -1,85 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
 :root
 {
-  --base-background-color: #343a40;
-  --base-background-color-rgb: 52,58,64;
-  --base-background-color-light: #5e646b;
+  --base-color: #2962ff;
+  --base-color-step-50: #e7e9ff;
+  --base-color-step-100: #c2c8fe;
+  --base-color-step-200: #96a4fe;
+  --base-color-step-300: #6280ff;
+  --base-color-step-400: #2962ff;
+  --base-color-step-500: #0044fc;
+  --base-color-step-600: #003bf0;
+  --base-color-step-700: #002fe3;
+  --base-color-step-800: #0022d9;
+  --base-color-step-900: #0001c0;
 
-  --base-text-color: #ffffff;
-  --base-text-color-rgb: 255,255,255;
+  --tertiary-color: #5b29ff;
+  --tertiary-color-step-50: #efe7ff;
+  --tertiary-color-step-100: #d5c4fe;
+  --tertiary-color-step-200: #b89cff;
+  --tertiary-color-step-300: #9871ff;
+  --tertiary-color-step-400: #7c4fff;
+  --tertiary-color-step-500: #5b29ff;
+  --tertiary-color-step-600: #4b25f8;
+  --tertiary-color-step-700: #301cf0;
+  --tertiary-color-step-800: #0014eb;
+  --tertiary-color-step-900: #0000e6;
 
-  --base-color-step-50: #3e444a;
-  --base-color-step-100: #484e53;
-  --base-color-step-150: #52585d;
-  --base-color-step-200: #5d6166;
-  --base-color-step-250: #676b70;
-  --base-color-step-300: #717579;
-  --base-color-step-350: #7b7f83;
-  --base-color-step-400: #85898c;
-  --base-color-step-450: #8f9396;
-  --base-color-step-500: #9a9da0;
-  --base-color-step-550: #a4a6a9;
-  --base-color-step-600: #aeb0b3;
-  --base-color-step-650: #b8babc;
-  --base-color-step-700: #c2c4c6;
-  --base-color-step-750: #cccecf;
-  --base-color-step-800: #d6d8d9;
-  --base-color-step-850: #e1e1e2;
-  --base-color-step-900: #ebebec;
-  --base-color-step-950: #f5f5f5;
+  --secondary-color: #ffc629;
+  --secondary-color-step-50: #fff7e1;
+  --secondary-color-step-100: #ffeab2;
+  --secondary-color-step-200: #ffdd81;
+  --secondary-color-step-300: #ffd14f;
+  --secondary-color-step-400: #ffc629;
+  --secondary-color-step-500: #febc0c;
+  --secondary-color-step-600: #feaf07;
+  --secondary-color-step-700: #fe9c08;
+  --secondary-color-step-800: #fd8b09;
+  --secondary-color-step-900: #fd6b0a;
 
-  --main-background-color: #6201ed;
-  --main-background-color-dark: #1e00c0;
-  --main-background-color-rgb: 98,1,237;
+  --background-color: rgb(235, 235, 235);
+  --content-color: #ffffff;
 
-  --main-text-color: #fdfdfd;
-  --main-text-color-rgb: 255,255,255;
-
-  --main-color-step-50: #6a0eee;
-  --main-color-step-100: #721aef;
-  --main-color-step-150: #7a27f0;
-  --main-color-step-200: #8134f1;
-  --main-color-step-250: #8941f2;
-  --main-color-step-300: #914df2;
-  --main-color-step-350: #995af3;
-  --main-color-step-400: #a167f4;
-  --main-color-step-450: #a973f5;
-  --main-color-step-500: #b180f6;
-  --main-color-step-550: #b88df7;
-  --main-color-step-600: #c099f8;
-  --main-color-step-650: #c8a6f9;
-  --main-color-step-700: #d0b3fa;
-  --main-color-step-750: #d8c0fb;
-  --main-color-step-800: #e0ccfb;
-  --main-color-step-850: #e7d9fc;
-  --main-color-step-900: #efe6fd;
-  --main-color-step-950: #f7f2fe;
-
-  --secondary-background-color: #8bed01;
-  --secondary-background-color-rgb: 139,237,1;
-
-  --secondary-text-color: #ffffff;
-  --secondary-text-color-rgb: 255,255,255;
-
-  --secondary-color-step-50: #91ee0e;
-  --secondary-color-step-100: #97ef1a;
-  --secondary-color-step-150: #9cf027;
-  --secondary-color-step-200: #a2f134;
-  --secondary-color-step-250: #a8f241;
-  --secondary-color-step-300: #aef24d;
-  --secondary-color-step-350: #b4f35a;
-  --secondary-color-step-400: #b9f467;
-  --secondary-color-step-450: #bff573;
-  --secondary-color-step-500: #c5f680;
-  --secondary-color-step-550: #cbf78d;
-  --secondary-color-step-600: #d1f899;
-  --secondary-color-step-650: #d6f9a6;
-  --secondary-color-step-700: #dcfab3;
-  --secondary-color-step-750: #e2fbc0;
-  --secondary-color-step-800: #e8fbcc;
-  --secondary-color-step-850: #eefcd9;
-  --secondary-color-step-900: #f3fde6;
-  --secondary-color-step-950: #f9fef2;
 }
 
 
@@ -94,9 +54,9 @@
     font-family: 'Montserrat Light';
 }
 
-body, .container-fluid
+body, .container-fluid, html
 {
-  background-color: var(--base-background-color-light);
+  background-color: var(--background-color);
 }
 
 .animated {
@@ -1481,7 +1441,7 @@ body, .container-fluid
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--main-background-color);
+  background: var(--base-color);
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 100% 50%;
@@ -1647,7 +1607,7 @@ body, .container-fluid
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--main-background-color);
+  background: var(--base-color);
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 100% 50%;
