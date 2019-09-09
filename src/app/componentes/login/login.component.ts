@@ -3,12 +3,27 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  // Manejo de form controls
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+
+  claveFormControl = new FormControl('',
+  [
+    Validators.required
+  ]);
+
+
 
   private subscription: Subscription;
   usuario = '';

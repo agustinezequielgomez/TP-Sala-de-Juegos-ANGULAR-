@@ -21,7 +21,35 @@
     </div>
   </div>
 </div-->
- <div class="container" >
+<div class="container-fluid">
+<form class="form-group">
+        <div class="imgcontainer">
+          <img src="./assets/imagenes/login.png" alt="Avatar" class="img-fluid mx-auto d-block">
+        </div>
+    <mat-form-field appearance="outline" id="email">
+      <mat-label>Email</mat-label>
+      <input matInput [formControl]="emailFormControl" [(ngModel)]="usuario">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Ingrese un email valido
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        El  <strong>email</strong> es requerido 
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" id="clave">
+      <mat-label>Clave</mat-label>
+      <input matInput [formControl]="claveFormControl" [(ngModel)]="clave">
+      <mat-error *ngIf="claveFormControl.hasError('required')">La <strong>clave</strong> es requerida</mat-error>
+    </mat-form-field>
+    <button id="ingresar" class="btn form-control hvr-radial-out">Ingresar</button>
+    <mat-checkbox>Recordar usuario</mat-checkbox>
+    <form id="register" class="form-group">
+      <button class="btn btn-danger">Cancelar</button>
+      <button class="btn btn-primary">Registrarse</button>
+    </form>
+  </form>
+</div>
+ <!-- <div class="container" >
   <div class="jumbotron" style="padding:50px;">
     <form action="return true;">
       <div class="imgcontainer">
@@ -54,4 +82,4 @@
      
     </form>
   </div>
-</div>
+</div> -->

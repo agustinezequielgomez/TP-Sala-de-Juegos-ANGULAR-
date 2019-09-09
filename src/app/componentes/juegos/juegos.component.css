@@ -1,0 +1,11 @@
+*
+{
+    background-color: var(--base-color);
+    margin: 0;
+}
+
+h1
+{
+    color:white;
+    padding: .5rem 0rem;
+}

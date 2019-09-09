@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 :root
 {
   --base-color: #2962ff;
@@ -1751,6 +1752,7 @@ body, .container-fluid, html
 }
 .hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {
   color: white;
+  
 }
 .hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before {
   -webkit-transform: scale(2);

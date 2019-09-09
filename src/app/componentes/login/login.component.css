@@ -1,5 +1,52 @@
 
-form {
+#email, #clave
+{
+    width: 100%;
+}
+
+form
+{
+    background-color: #2962ff;
+    padding: 1rem;
+}
+
+#ingresar
+{
+    background-color: var(--secondary-color-step-400);
+    color: black;
+    padding: .3rem 0rem .3rem;
+    margin-bottom: 1rem;
+}
+
+#register
+{
+    margin-top: 1rem;
+   /* background-color: var(--tertiary-color);*/
+}
+
+#register>button
+{
+    margin-right: 1rem; 
+}
+
+mat-label {
+    color: white;
+  }
+
+mat-checkbox
+{
+    color: white;
+}
+
+img
+{
+    justify-self: center;
+    width: 25%;
+    margin-bottom: 1rem;
+    border: 0;
+}
+
+/* form {
     border: 10px solid #f1f1f1;
     padding: 10px;
     background:gray;
@@ -57,7 +104,7 @@ span.psw {
     padding-top: 16px;
 }
 
-/* Change styles for span and cancel button on extra small screens */
+/* Change styles for span and cancel button on extra small screens 
 @media screen and (max-width: 300px) {
     span.psw {
        display: block;
@@ -66,4 +113,4 @@ span.psw {
     .cancelbtn {
        width: 100%;
     }
-}
+} */

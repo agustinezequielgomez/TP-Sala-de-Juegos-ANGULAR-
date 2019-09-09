@@ -7,7 +7,7 @@ import { SecurityContext } from '@angular/compiler/src/core';
 @Component({
   selector: 'app-menu-card',
   templateUrl: './menu-card.component.html',
-  styleUrls: ['./menu-card.component.css']
+  styleUrls: ['./menu-card.component.less']
 })
 export class MenuCardComponent implements OnInit {
 
