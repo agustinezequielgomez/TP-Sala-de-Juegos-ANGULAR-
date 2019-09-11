@@ -1,0 +1,5 @@
+<div id="imgBlurred" class="animated fadeIn"></div>
+    <div class="top">
+        <h1 class="slide-in-blurred-top" *ngIf="textEntrance">Bienvenido a la Sala de Juegos</h1>
+        <a [routerLink]="['/Login']"  *ngIf="buttonEntrance" class="slide-in-blurred-top"><button  mat-raised-button>Ingresar</button></a>
+    </div>

@@ -21,7 +21,7 @@
     </div>
   </div>
 </div-->
-<div class="container-fluid">
+<div class="container-fluid animated fadeIn">
 <form class="form-group">
         <div class="imgcontainer">
           <img src="./assets/imagenes/login.png" alt="Avatar" class="img-fluid mx-auto d-block">
@@ -41,11 +41,11 @@
       <input matInput [formControl]="claveFormControl" [(ngModel)]="clave">
       <mat-error *ngIf="claveFormControl.hasError('required')">La <strong>clave</strong> es requerida</mat-error>
     </mat-form-field>
-    <button id="ingresar" class="btn form-control hvr-radial-out">Ingresar</button>
+    <button mat-raised-button id="ingresar" class="btn form-control">Ingresar</button>
     <mat-checkbox>Recordar usuario</mat-checkbox>
     <form id="register" class="form-group">
-      <button class="btn btn-danger">Cancelar</button>
-      <button class="btn btn-primary">Registrarse</button>
+      <a [routerLink]="['/']"><button mat-raised-button color="warn">Cancelar</button></a>
+      <a id="registerBtn" [routerLink]="['/Registro']"><button mat-raised-button color="primary">Registrarse</button></a>
     </form>
   </form>
 </div>

@@ -59,6 +59,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { InicioComponent } from './componentes/inicio/inicio.component';
 
 
 @NgModule({
@@ -86,7 +87,8 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
     JugadoresListadoComponent,
     InputJugadoresComponent,
     SexoPipe,
-    SanitizerPipe
+    SanitizerPipe,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
