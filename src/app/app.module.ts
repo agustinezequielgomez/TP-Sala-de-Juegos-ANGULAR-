@@ -61,6 +61,20 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyCZ63weJ7A3M02Bd_N_W-DYI8kBmrmJJcI',
+  authDomain: 'labo-iv.firebaseapp.com',
+  databaseURL: 'https://labo-iv.firebaseio.com',
+  projectId: 'labo-iv',
+  storageBucket: '',
+  messagingSenderId: '243523402378',
+  appId: '1:243523402378:web:1129cdffcbbf271ad18b73'
+};
+
 
 @NgModule({
   declarations: [
@@ -101,6 +115,9 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
     MatInputModule,
     MatFormFieldModule,
     MatCheckboxModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })

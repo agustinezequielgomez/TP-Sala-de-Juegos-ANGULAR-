@@ -4,6 +4,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import { FirebaseAuthService } from '../../servicios/firebase-auth.service';
 
 @Component({
   selector: 'app-login',
@@ -23,12 +24,25 @@ export class LoginComponent implements OnInit {
     Validators.required
   ]);
 
-
-
-  private subscription: Subscription;
   usuario = '';
-  clave= '';
-  progreso: number;
+  clave = '';
+
+  constructor(private authService: FirebaseAuthService, private route: Router) {
+
+  }
+
+  ngOnInit() {
+  }
+
+  login()
+  {
+    this.authService.loginEmailUser(this.usuario, this.clave)
+                    .then(() => {
+                      this.route.navigate(['/Principal']);
+                    });
+  }
+
+  /*progreso: number;
   progresoMensaje="esperando..."; 
   logeando=true;
   ProgresoDeAncho:string;
@@ -92,5 +106,5 @@ export class LoginComponent implements OnInit {
     });
     //this.logeando=true;
   }
-
+*/
 }
