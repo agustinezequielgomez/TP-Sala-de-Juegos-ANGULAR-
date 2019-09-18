@@ -1,39 +1,39 @@
 <div class="container-fluid fadeIn animated">
-  <div id="topRow" class="row">
-    <div class="col-1"></div>
-    <div class="col-10">
-      <div class="row">
-        <table class="table">
-          <app-cabecera></app-cabecera>
-        </table>
-        <table class="table table-responsive">
-          <thead>
-            <tr>
-              <th scope="col" id="menuPrincipal">Menu Principal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <div class="col-12">
-              <tr *ngFor="let contenido of content">
-                <a routerLink="{{contenido.link}}">
-                  <div class="hvr-bounce-to-left media">
-                    <div class="col-2 img-col">
-                      <td><img id="imagen" src="{{contenido.img}}" class="media-object imagenDeMenu img-fluid"></td>
-                    </div>
-                    <div class="col-10" id="content">
-                      <td>
-                        <h4 class="media-heading">{{contenido.heading}}</h4>
-                        <p>{{contenido.content}}</p>
-                      </td>
-                    </div>
-                  </div>
-                </a>
-              </tr>
+    <div id="topRow" class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="row">
+                <table class="table">
+                    <app-cabecera></app-cabecera>
+                </table>
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="menuPrincipal">Menu Principal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <div class="col-12">
+                            <tr *ngFor="let contenido of content">
+                                <a routerLink="{{contenido.link}}">
+                                    <div id="hoverable" class="hvr-bounce-to-left media">
+                                        <div class="col-2 img-col">
+                                            <td><img id="imagen" src="{{contenido.img}}" class="media-object imagenDeMenu img-fluid"></td>
+                                        </div>
+                                        <div class="col-10" id="content">
+                                            <td>
+                                                <h4 class="media-heading">{{contenido.heading}}</h4>
+                                                <p>{{contenido.content}}</p>
+                                            </td>
+                                        </div>
+                                    </div>
+                                </a>
+                            </tr>
+                        </div>
+                    </tbody>
+                </table>
             </div>
-          </tbody>
-        </table>
-      </div>
+        </div>
+        <div class="col-1"></div>
     </div>
-    <div class="col-1"></div>
-  </div>
 </div>

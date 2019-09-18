@@ -16,7 +16,9 @@ export class MenuCardComponent implements OnInit {
 {link: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/ppt.jpg')`),
  title: 'Piedra Papel o Tijera', description: 'Juega contra la máquina'},
 {link: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/adivina.png')`),
-title: 'Adivina el número secreto', description: 'Juega de estrategia'}];
+title: 'Adivina el número secreto', description: 'Juega de estrategia'},
+{link: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/hi-lo.png')`),
+title: 'Hi-Lo', description: 'Adivina si la siguiente carta sera mayor o menor que la actual'}];
 
 
 constructor(private route: ActivatedRoute, private router: Router, private sanitizer: DomSanitizer) 

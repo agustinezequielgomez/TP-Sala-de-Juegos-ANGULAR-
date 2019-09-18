@@ -24,11 +24,12 @@ export class LoginComponent implements OnInit {
     Validators.required
   ]);
 
-  usuario = '';
-  clave = '';
+  public usuario: string;
+  public clave: string;
 
   constructor(private authService: FirebaseAuthService, private route: Router) {
-
+    this.usuario = 'admin@admin.com';
+    this.clave = 'admin11';
   }
 
   ngOnInit() {
