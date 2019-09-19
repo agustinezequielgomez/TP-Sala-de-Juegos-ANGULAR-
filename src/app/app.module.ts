@@ -58,12 +58,13 @@ import { SanitizerPipe } from './pipes/sanitizer.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS, MatProgressBarModule } from '@angular/material';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { SnackBarTemplateComponent } from './componentes/snack-bar-template/snack-bar-template.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCZ63weJ7A3M02Bd_N_W-DYI8kBmrmJJcI',
@@ -102,7 +103,8 @@ const firebaseConfig = {
     InputJugadoresComponent,
     SexoPipe,
     SanitizerPipe,
-    InicioComponent
+    InicioComponent,
+    SnackBarTemplateComponent
   ],
   imports: [
     BrowserModule,
@@ -118,6 +120,8 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    MatSnackBarModule,
+    MatProgressBarModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })
@@ -125,7 +129,9 @@ const firebaseConfig = {
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
-  bootstrap: [AppComponent]
+  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService,
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500, action: 'Cerrar'}}],
+  bootstrap: [AppComponent],
+  entryComponents: [SnackBarTemplateComponent]
 })
 export class AppModule { }

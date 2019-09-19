@@ -5,6 +5,8 @@ import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import { FirebaseAuthService } from '../../servicios/firebase-auth.service';
+import { MatSnackBar } from '@angular/material';
+import { SnackBarTemplateComponent } from '../snack-bar-template/snack-bar-template.component';
 
 @Component({
   selector: 'app-login',
@@ -26,10 +28,14 @@ export class LoginComponent implements OnInit {
 
   public usuario: string;
   public clave: string;
+  public showPass: boolean;
+  public type = 'text';
+  public logingIn = false;
 
-  constructor(private authService: FirebaseAuthService, private route: Router) {
+  constructor(private authService: FirebaseAuthService, private route: Router, private snackBar: MatSnackBar) {
     this.usuario = 'admin@admin.com';
     this.clave = 'admin11';
+    this.showPass = false;
   }
 
   ngOnInit() {
@@ -37,75 +43,37 @@ export class LoginComponent implements OnInit {
 
   login()
   {
+    this.logingIn = true;
     this.authService.loginEmailUser(this.usuario, this.clave)
                     .then(() => {
-                      this.route.navigate(['/Principal']);
+                      setTimeout(() => {
+                        this.route.navigate(['/Principal']);
+                      }, 1500);
+                    }, (err) => {
+                      setTimeout(() => {
+                        this.logingIn = false;
+                        this.snackBar.openFromComponent(SnackBarTemplateComponent, {
+                          data: {
+                            error: this.validateLogin(err.code),
+                            action: 'Cerrar'
+                          }
+                        });
+                      }, 1500);
                     });
   }
 
-  /*progreso: number;
-  progresoMensaje="esperando..."; 
-  logeando=true;
-  ProgresoDeAncho:string;
 
-  clase="progress-bar progress-bar-info progress-bar-striped ";
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router) {
-      this.progreso=0;
-      this.ProgresoDeAncho="0%";
-
-  }
-
-  ngOnInit() {
-  }
-
-  Entrar() {
-    if (this.usuario === 'admin' && this.clave === 'admin') {
-      this.router.navigate(['/Principal']);
+  validateLogin(errCode): string
+  {
+    switch (errCode)
+    {
+      case 'auth/invalid-email':
+        return 'El mail ingresado no es valido';
+      case 'auth/user-not-found':
+        return 'El mail ingresado no corresponde a ningun usuario';
+      case 'auth/wrong-password':
+        return 'Contraseña incorrecta';
     }
   }
-  MoverBarraDeProgreso() {
-    
-    this.logeando=false;
-    this.clase="progress-bar progress-bar-danger progress-bar-striped active";
-    this.progresoMensaje="NSA spy..."; 
-    let timer = TimerObservable.create(200, 50);
-    this.subscription = timer.subscribe(t => {
-      console.log("inicio");
-      this.progreso=this.progreso+1;
-      this.ProgresoDeAncho=this.progreso+20+"%";
-      switch (this.progreso) {
-        case 15:
-        this.clase="progress-bar progress-bar-warning progress-bar-striped active";
-        this.progresoMensaje="Verificando ADN..."; 
-          break;
-        case 30:
-          this.clase="progress-bar progress-bar-Info progress-bar-striped active";
-          this.progresoMensaje="Adjustando encriptación.."; 
-          break;
-          case 60:
-          this.clase="progress-bar progress-bar-success progress-bar-striped active";
-          this.progresoMensaje="Recompilando Info del dispositivo..";
-          break;
-          case 75:
-          this.clase="progress-bar progress-bar-success progress-bar-striped active";
-          this.progresoMensaje="Recompilando claves facebook, gmail, chats..";
-          break;
-          case 85:
-          this.clase="progress-bar progress-bar-success progress-bar-striped active";
-          this.progresoMensaje="Instalando KeyLogger..";
-          break;
-          
-        case 100:
-          console.log("final");
-          this.subscription.unsubscribe();
-          this.Entrar();
-          break;
-      }     
-    });
-    //this.logeando=true;
-  }
-*/
 }

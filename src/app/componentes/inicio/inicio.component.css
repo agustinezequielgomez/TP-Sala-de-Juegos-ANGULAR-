@@ -36,8 +36,8 @@ body, html
 {
     background-image: url('../../../assets/imagenes/cabecera.jpg');
     height: 100vh;
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
 
     background-position: center;
     background-repeat: no-repeat;

@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import '../node_modules/aos/dist/aos.css';
 :root {
     --base-color: #2962ff;
     --base-color-step-50: #e7e9ff;

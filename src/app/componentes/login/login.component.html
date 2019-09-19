@@ -15,10 +15,13 @@
     </mat-form-field>
     <mat-form-field appearance="outline" id="clave">
       <mat-label>Clave</mat-label>
-      <input matInput [formControl]="claveFormControl" [(ngModel)]="clave">
+      <input matInput [type]="this.showPass == true? 'text':'password'" [formControl]="claveFormControl" [(ngModel)]="clave">
       <mat-error *ngIf="claveFormControl.hasError('required')">La <strong>clave</strong> es requerida</mat-error>
     </mat-form-field>
     <button mat-raised-button id="ingresar" class="btn form-control" (click)="login()">Ingresar</button>
+    <mat-progress-bar *ngIf="this.logingIn" id="progressBar" class="vivify fadeIn" mode="indeterminate"></mat-progress-bar>
+    <mat-checkbox name="showPass" [(ngModel)]="this.showPass">Mostrar contraseña</mat-checkbox>
+    <br>
     <mat-checkbox>Recordar usuario</mat-checkbox>
     <form id="register" class="form-group">
       <a [routerLink]="['/']"><button mat-raised-button color="warn">Cancelar</button></a>

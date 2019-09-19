@@ -3,6 +3,9 @@
     margin: 0;
     border: 0;
     border-bottom: .1rem solid var(--secondary-color-step-900);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
 }
 
 .navbar-toggler-icon {
@@ -17,11 +20,11 @@
     background-color: var(--secondary-color-step-900);
 }
 
-.dropdown-menu>a:hover {
-    background-color: var(--tertiary-color-step-500);
+.tabs>a:hover {
+    color: var(--secondary-color-step-900);
 }
 
-a {
+.tabs>a, footer>p>a {
     color: white;
     text-decoration: none;
     padding-bottom: .3rem;
@@ -35,8 +38,35 @@ a {
     padding-right: 2rem;
 }
 
-.imagenDeQuienSoy {
-    width: 100%;
+#whoAmIText
+{
+    margin: 2% 0;
+}
+
+#whoAmIImg
+{
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    align-self: center;
+}
+
+#who
+{
+    background-color: var(--secondary-color-step-600);
+}
+
+#what
+{
+    background-color: var(--base-color-step-600);
+    color: white;
+    border-bottom: .3rem solid var(--tertiary-color-step-700);
+}
+
+#where
+{
+    background-color: var(--tertiary-color);
+    color: white;
 }
 
 body {
@@ -45,30 +75,15 @@ body {
     color: #f5f6f7;
 }
 
+
+
+
 p {
     font-size: 16px;
 }
 
 .margin {
     margin-bottom: 45px;
-}
-
-.bg-1 {
-    background-color: #1abc9c;
-    /* Green */
-    color: #ffffff;
-}
-
-.bg-2 {
-    background-color: #474e5d;
-    /* Dark Blue */
-    color: #ffffff;
-}
-
-.bg-3 {
-    background-color: #ffffff;
-    /* White */
-    color: #555555;
 }
 
 .bg-4 {
@@ -90,8 +105,4 @@ p {
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
-}
-
-.navbar-nav li a:hover {
-    color: #1abc9c !important;
 }
