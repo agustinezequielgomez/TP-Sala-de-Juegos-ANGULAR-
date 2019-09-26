@@ -1,0 +1,25 @@
+<div class="padding-top vivify pullUp">
+    <div *ngIf="this.destroyComponent == false" id="container" class="container rounded" [ngClass]="{vivify: true, driveOutLeft: this.gameFinished == true}">
+        <div id="card-container">
+            <img class="cards" id="currentCard" [ngClass]="{vivify: true, flipInY: this.cardChosen==true, flipOutY: this.hideCurrent == true}" src="{{this.currentCard.img}}" alt="">
+            <img  clasS="cards" id="previousCard" [ngClass]="{vivify: true, flipInY: this.currentToPrevious==true}" src="{{this.previousCard.img}}" alt="">
+        <div>
+        </div>
+        </div>
+        <div id="buttons">
+            <button [disabled]="!this.hiloButtonsEnabled" id="higher" class="d-block w-100" mat-raised-button (click)="decideCard('higher')">Alto <mat-icon>keyboard_arrow_up</mat-icon></button>
+            <button [disabled]="!this.hiloButtonsEnabled" id="lower" class="d-block w-100" mat-raised-button (click)="decideCard('lower')">Bajo <mat-icon>keyboard_arrow_down</mat-icon></button>
+            <mat-icon id="failure" *ngIf="this.fail == true" [class.spinOut]="this.exitResult == true" class="icons vivify driveInTop spinIn">clear</mat-icon>
+            <mat-icon id="success" *ngIf="this.success == true" [class.spinOut]="this.exitResult == true" class="icons vivify driveInTop spinIn">done_all</mat-icon>
+        </div>
+        <button [disabled]="this.playing == true" id="jugar" mat-raised-button (click)="jugar()">Jugar</button>
+        <p id="puntuacion">{{this.puntuacion}}/10</p>
+    </div>
+    <div *ngIf="this.gameFinished == true" class="vivify driveInRight delay-1000 text-center">
+        <p class="gameOver">¡Juego Terminado!</p>
+        <p class="gameOver">Tu puntuacion fue {{this.puntuacion}} de 10</p>
+        <button class="d-block w-100 gameOverButtons" mat-raised-button (click)="again()">Jugar otra vez</button>
+        <button class="d-block w-100 gameOverButtons" mat-raised-button (click)="principal()">Menu Principal</button>
+    </div>
+
+</div>

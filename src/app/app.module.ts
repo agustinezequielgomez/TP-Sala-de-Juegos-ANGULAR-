@@ -6,7 +6,7 @@ import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivin
 import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from './componentes/login/login.component';
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 // import { AccordionModule } from 'ngx-bootstrap';
 // agrego las clases para utilizar ruteo
@@ -58,13 +58,16 @@ import { SanitizerPipe } from './pipes/sanitizer.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule, MatInputModule, MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS, MatProgressBarModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS, MatProgressBarModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { SnackBarTemplateComponent } from './componentes/snack-bar-template/snack-bar-template.component';
+import { HiLoComponent } from './componentes/hi-lo/hi-lo.component';
+import { HttpService } from './Services/http.service';
+import { HighLowService } from './Services/high-low.service';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCZ63weJ7A3M02Bd_N_W-DYI8kBmrmJJcI',
@@ -104,14 +107,15 @@ const firebaseConfig = {
     SexoPipe,
     SanitizerPipe,
     InicioComponent,
-    SnackBarTemplateComponent
+    SnackBarTemplateComponent,
+    HiLoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     RuteandoModule,
-    HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
@@ -122,6 +126,8 @@ const firebaseConfig = {
     AngularFirestoreModule,
     MatSnackBarModule,
     MatProgressBarModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })
@@ -129,7 +135,7 @@ const firebaseConfig = {
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService,
+  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService, HttpService, HighLowService,
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500, action: 'Cerrar'}}],
   bootstrap: [AppComponent],
   entryComponents: [SnackBarTemplateComponent]

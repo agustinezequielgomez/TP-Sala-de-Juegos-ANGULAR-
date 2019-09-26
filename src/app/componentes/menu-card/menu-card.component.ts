@@ -11,17 +11,17 @@ import { SecurityContext } from '@angular/compiler/src/core';
 })
 export class MenuCardComponent implements OnInit {
 
-  public cardContent: any[] = [{link: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/cerebro.jpg')`),
-  title: 'Velocidad y agilidad aritmética', description:'Juego de agilidad mental'},
-{link: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/ppt.jpg')`),
- title: 'Piedra Papel o Tijera', description: 'Juega contra la máquina'},
-{link: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/adivina.png')`),
-title: 'Adivina el número secreto', description: 'Juega de estrategia'},
-{link: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/hi-lo.png')`),
-title: 'Hi-Lo', description: 'Adivina si la siguiente carta sera mayor o menor que la actual'}];
+  public cardContent: any[] = [{img: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/cerebro.jpg')`),
+  title: 'Velocidad y agilidad aritmética', description:'Juego de agilidad mental', link: '/Juegos/Agilidad'},
+{img: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/ppt.jpg')`),
+ title: 'Piedra Papel o Tijera', description: 'Juega contra la máquina', link: '/Juegos/PiedraPapelTijera'},
+{img: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/adivina.png')`),
+title: 'Adivina el número secreto', description: 'Juega de estrategia', link: '/Juegos/Adivina'},
+{img: this.sanitizer.bypassSecurityTrustStyle(`url('/assets/imagenes/hi-lo.png')`),
+title: 'Hi-Lo', description: 'Adivina si la siguiente carta sera mayor o menor que la actual', link: '/Juegos/HiLo'}];
 
 
-constructor(private route: ActivatedRoute, private router: Router, private sanitizer: DomSanitizer) 
+constructor(private route: ActivatedRoute, public router: Router, private sanitizer: DomSanitizer) 
 {
 }
 
@@ -32,12 +32,13 @@ sanitizeStlye(url)
 
   ngOnInit() {
   }
-  Juego(tipo: string) {
+
+  Jugar(tipo: string) {
     switch (tipo) {
-      case 'Adivina':
+      case 'Adivina el número secreto':
           this.router.navigate(['/Juegos/Adivina']);
         break;
-      case 'Agilidad':
+      case 'Velocidad y agilidad aritmética':
           this.router.navigate(['/Juegos/Agilidad']);
         break;
       case 'AdivinaMasListado':
@@ -46,6 +47,9 @@ sanitizeStlye(url)
       case 'AgilidadaMasListado':
           this.router.navigate(['/Juegos/AgilidadaMasListado']);
         break;
+        case 'Hi-Lo':
+          this.router.navigate(['/Juegos/HiLo']);
+          break;
     }
   }
 }

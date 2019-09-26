@@ -1,0 +1,104 @@
+#container {
+    border: .1rem solid black;
+    margin: 1% 2%;
+    margin: auto;
+    background-color: var(--tertiary-color-step-400);
+}
+
+.padding-top {
+    padding-top: 1%;
+    background-color: var(--background-color);
+}
+
+#card-container {
+    background-color: transparent;
+    width: 50%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.cards {
+    width: initial;
+    height: initial;
+    margin-left: 1%;
+}
+
+#jugar {
+    background-color: var(--secondary-color-step-900);
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+#buttons {
+    position: absolute;
+    top: 30%;
+    left: 57%;
+    width: 20%;
+}
+
+#higher {
+    margin-bottom: 10%;
+    background-color: rgb(11, 209, 11);
+}
+
+#lower {
+    background-color: red;
+}
+
+#spinner {
+    position: absolute;
+    top: 19%;
+    left: 60%;
+    display: flex;
+}
+
+#timer
+{
+    position: absolute;
+    top: 22%;
+    left: 62.5%;
+    display: flex;
+}
+
+.cardText {
+    margin-top: 2%;
+    width: 226px;
+}
+
+#puntuacion {
+    position: fixed;
+    display: block;
+    border: .1rem solid black;
+    top: 15%;
+    right: 22.5%;
+    padding: 1rem 2rem;
+}
+
+.icons
+{
+    position: absolute;
+    left: 25%;
+    font-size: 7rem;
+}
+
+#success
+{
+    color: rgb(11, 209, 11);
+}
+
+#failure
+{
+    color: red;
+}
+
+.gameOver
+{
+    font-size: 3rem;
+}
+
+.gameOverButtons
+{
+    margin-bottom: 2%;
+    width: 50%;
+    background-color: var(--tertiary-color-step-400);
+}

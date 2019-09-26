@@ -17,7 +17,8 @@ export class MenuComponent implements OnInit {
     {tabName: 'Adivina', link: 'Juegos/Adivina'},
     {tabName: 'Agilidad', link: 'Juegos/Agilidad'},
     {tabName: 'Adivina+Listado', link: 'Juegos/AdivinaMasListado'},
-    {tabName: 'Agilidad+Listado', link: 'Juegos/AgilidadMasListado'}
+    {tabName: 'Agilidad+Listado', link: 'Juegos/AgilidadMasListado'},
+    {tabName: 'HiLo', link: 'Juegos/HiLo'}
   ];
   constructor(private route: ActivatedRoute,
               private router: Router) { }

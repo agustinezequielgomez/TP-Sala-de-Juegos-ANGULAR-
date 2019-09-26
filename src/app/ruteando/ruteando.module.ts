@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // importo del module principal
 import { RouterModule, Routes } from '@angular/router';
@@ -22,31 +22,31 @@ import { ListadoDePaisesComponent } from '../componentes/listado-de-paises/lista
 import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-google.component'
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
 import { InicioComponent } from '../componentes/inicio/inicio.component';
+import { HiLoComponent } from '../componentes/hi-lo/hi-lo.component';
 
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
-{path: 'Jugadores' , component: JugadoresListadoComponent},
-{path: '' , component: InicioComponent},
-{path: 'Login' , component: LoginComponent},
-{path: 'Mapa' , component: MapaDeGoogleComponent},
-{path: 'QuienSoy' , component: QuienSoyComponent},
-{path: 'Registro' , component: RegistroComponent},
-{path: 'Principal' , component: PrincipalComponent},
-{path: 'Listado' , component: ListadoComponent},
-{path: 'Paises' , component: ListadoDePaisesComponent},
-
-{ path: 'Juegos' ,
-component: JuegosComponent ,
-children:
-     [{path: '' , component: MenuCardComponent},
-     {path: 'Adivina' , component: AdivinaElNumeroComponent},
-      {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
-      {path: 'AgilidadMasListado' , component: AgilidadMasListadoComponent},
-      {path: 'Agilidad' , component: AgilidadAritmeticaComponent}]
-},
-{path: '**' , component: ErrorComponent},
-{path: 'error' , component: ErrorComponent}];
+  { path: 'Jugadores', component: JugadoresListadoComponent },
+  { path: '', component: InicioComponent },
+  { path: 'Login', component: LoginComponent },
+  { path: 'Mapa', component: MapaDeGoogleComponent },
+  { path: 'QuienSoy', component: QuienSoyComponent },
+  { path: 'Registro', component: RegistroComponent },
+  { path: 'Principal', component: PrincipalComponent },
+  { path: 'Listado', component: ListadoComponent },
+  { path: 'Paises', component: ListadoDePaisesComponent },
+  {
+    path: 'Juegos', component: JuegosComponent, children:
+      [{ path: '', component: MenuCardComponent },
+      { path: 'Adivina', component: AdivinaElNumeroComponent },
+      { path: 'AdivinaMasListado', component: AdivinaMasListadoComponent },
+      { path: 'AgilidadMasListado', component: AgilidadMasListadoComponent },
+      { path: 'Agilidad', component: AgilidadAritmeticaComponent },
+      { path: 'HiLo', component: HiLoComponent }]
+  },
+  { path: '**', component: ErrorComponent },
+  { path: 'error', component: ErrorComponent }];
 
 @NgModule({
   imports: [

@@ -17,6 +17,6 @@ export class HttpService {
       catchError((err: HttpErrorResponse) => {
         return throwError(err);
       })
-    )
+    );
   }
 }
