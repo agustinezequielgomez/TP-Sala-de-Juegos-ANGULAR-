@@ -84,7 +84,7 @@ export class HiLoComponent implements OnInit {
           }
           break;
       }
-      if (this.turns === 2) {
+      if (this.turns === 10) {
         this.gameFinished = true;
         timer(1000).subscribe(() => {
           this.destroyComponent = true;
