@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { JuegoServiceService } from '../../servicios/juego-service.service';
 
 @Component({
   selector: 'app-listado',
@@ -7,27 +6,13 @@ import { JuegoServiceService } from '../../servicios/juego-service.service';
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent implements OnInit {
-  public listadoParaCompartir: Array<any>;
-   miServicioJuego:JuegoServiceService
 
-  constructor(servicioJuego:JuegoServiceService) {
-    this.miServicioJuego = servicioJuego;
-    
+  public listado: [{usuario: string, fecha: Date, puntuacion: string}];
+  constructor() {
+    this.listado = JSON.parse(localStorage.getItem('hi-lo-score'));
   }
-  
+
   ngOnInit() {
-    
-  }
 
-  llamaService(){
-    console.log("llamaService");
-    this.listadoParaCompartir= this.miServicioJuego.listar();
-  }
-
-  llamaServicePromesa(){
-    console.log("llamaServicePromesa");
-    this.miServicioJuego.listarPromesa().then((listado) => {
-        this.listadoParaCompartir = listado;
-    });
   }
 }

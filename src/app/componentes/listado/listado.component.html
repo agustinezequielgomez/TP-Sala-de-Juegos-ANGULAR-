@@ -1,14 +1,16 @@
-
-<!--input type="button" (click)="llamaService()" class="btn btn-info" value="Pulsame" > 
-<input type="button" (click)="llamaServicePromesa()" class="btn btn-info" value="Pulsame Promesa" --> 
-
-<!-- Centered Pills -->
-<ul class="nav nav-pills nav-justified">
-    <li class="active"><a routerLink="/Principal">Sala de Juegos</a></li>
-    <li><a (click)="llamaService()">Servicio</a></li>
-    <li><a (click)="llamaServicePromesa()">Serv Promesa</a></li>
-    <li><a (click)="llamaServicePromesa()">Serv observable</a></li>
-  </ul>
-  
-<app-listado-de-resultados [listado]="listadoParaCompartir"> </app-listado-de-resultados>
-
+<table class="table table-responsive overflow-auto">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Fecha</th>
+      <th>Puntuacion</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let registro of this.listado">
+        <td scope="row">{{registro.usuario}}</td>
+        <td>{{registro.fecha | date}}</td>
+        <td>{{registro.puntuacion}}</td>
+      </tr>
+    </tbody>
+</table>

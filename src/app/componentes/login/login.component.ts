@@ -47,9 +47,11 @@ export class LoginComponent implements OnInit {
     this.authService.loginEmailUser(this.usuario, this.clave)
                     .then(() => {
                       setTimeout(() => {
+                        localStorage.setItem('uname', JSON.stringify(this.usuario));
                         this.route.navigate(['/Principal']);
                       }, 1500);
                     }, (err) => {
+                      console.log(err);
                       setTimeout(() => {
                         this.logingIn = false;
                         this.snackBar.openFromComponent(SnackBarTemplateComponent, {

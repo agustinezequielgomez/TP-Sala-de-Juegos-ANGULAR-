@@ -29,12 +29,14 @@ export class HiLoComponent implements OnInit {
   public hideCurrent = false;
   public gameFinished = false;
   public destroyComponent = false;
+  public storageEmpty = true;
   constructor(private hiloService: HighLowService, private router: Router) { }
 
   ngOnInit() {
     this.hiloService.shuffleDeck().subscribe((response) => {
     this.deckId = response.deck_id;
     });
+    this.storageEmpty = (localStorage.getItem('hi-lo-score') === null);
   }
 
   drawCard(obj: any) {
@@ -85,6 +87,7 @@ export class HiLoComponent implements OnInit {
           break;
       }
       if (this.turns === 10) {
+        this.saveScore();
         this.gameFinished = true;
         timer(1000).subscribe(() => {
           this.destroyComponent = true;
@@ -92,6 +95,31 @@ export class HiLoComponent implements OnInit {
       }
       this.hiloButtonsEnabled = true;
     });
+  }
+  
+  saveScore() 
+  {
+    if(localStorage.getItem('hi-lo-score') === null)
+    {
+      localStorage.setItem('hi-lo-score', JSON.stringify([{
+        usuario: JSON.parse(localStorage.getItem('uname')),
+        fecha: Date(),
+        puntuacion: `${this.puntuacion}/10`
+      }]));
+    }
+    else
+    {
+      let existingArray = JSON.parse(localStorage.getItem('hi-lo-score'));
+      console.log(existingArray);
+      existingArray.push({
+        usuario: JSON.parse(localStorage.getItem('uname')),
+        fecha: Date(),
+        puntuacion: `${this.puntuacion}/10`
+      });
+      console.log(existingArray);
+      localStorage.removeItem('hi-lo-score');
+      localStorage.setItem('hi-lo-score', JSON.stringify(existingArray));
+    }
   }
 
   failureResult() {
