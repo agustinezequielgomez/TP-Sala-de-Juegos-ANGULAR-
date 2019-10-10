@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Registro</h1>
+<div mat-dialog-content>
+  <form [formGroup]="this.form">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-hint *ngIf="this.form.controls['email'].errors?.required" class="text-danger">El mail es un campo requerido</mat-hint>
+        <mat-hint *ngIf="this.form.controls['email'].errors?.email" class="text-danger">El mail no cuenta con el formato correcto</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input type="{{this.type}}" matInput placeholder="Contraseña" formControlName="contraseña">
+        <mat-hint *ngIf="pass.invalid" class="text-danger">La contraseña es un campo requerido</mat-hint>
+      </mat-form-field>
+    </p>
+    <mat-slide-toggle [checked]="this.toggle" [color]="'primary'" (change)="this.showPass()">Mostrar contraseña</mat-slide-toggle>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button id="register" class="w-100" mat-raised-button [disabled]="this.form.invalid" (click)="this.register()">Registrarse</button>
+  <mat-progress-bar *ngIf="this.processing" id="progressBar" class="vivify fadeIn" mode="indeterminate"></mat-progress-bar>
+  <p *ngIf="this.success" id="success" class="text-success text-center vivify fadeIn">Registracion realizada con exito</p>
+</div>

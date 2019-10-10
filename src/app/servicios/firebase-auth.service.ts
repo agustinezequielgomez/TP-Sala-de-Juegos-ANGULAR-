@@ -19,4 +19,12 @@ export class FirebaseAuthService {
   logOut() {
     return this.afsAuth.auth.signOut();
   }
+
+  registerEmailUser(email: string, passowrd: string) {
+    return new Promise((resolve, reject) => {
+      this.afsAuth.auth.createUserWithEmailAndPassword(email, passowrd).
+          then(userData => resolve(userData),
+          err => reject(err));
+    });
+  }
 }

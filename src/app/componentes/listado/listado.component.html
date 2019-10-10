@@ -1,6 +1,7 @@
-<table class="table table-responsive overflow-auto">
+<table class="table table-responsive overflow-auto vivify fadeInTop">
   <thead>
     <tr>
+      <th>Juego</th>
       <th>Usuario</th>
       <th>Fecha</th>
       <th>Puntuacion</th>
@@ -8,6 +9,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let registro of this.listado">
+        <td>Hi-Lo</td>
         <td scope="row">{{registro.usuario}}</td>
         <td>{{registro.fecha | date}}</td>
         <td>{{registro.puntuacion}}</td>

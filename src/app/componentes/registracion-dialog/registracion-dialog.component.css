@@ -1,0 +1,12 @@
+mat-form-field {
+    display: inline;
+}
+
+#register {
+    background-color: var(--secondary-color-step-900);
+    margin-bottom: 1%;
+}
+
+#success {
+    margin-top: 2%;
+}
